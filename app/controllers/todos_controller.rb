@@ -1,10 +1,11 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
+    @categories = Category.all
   end
 
   def new
     @todo = Todo.new
+    @categories_array = Category.all.map { |category| [category.name, category.id] }
   end
 
   def create
@@ -18,6 +19,7 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find(params[:id])
+    @categories_array = Category.all.map { |category| [category.name, category.id] }
   end
 
   def update
@@ -38,7 +40,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:content)
+    params.require(:todo).permit(:content, :category_id)
   end
 
 end

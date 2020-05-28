@@ -2,9 +2,14 @@
 <%= link_to 'Todo新規作成', new_todo_path %>
 <%= link_to 'カテゴリー管理', categories_path %>
 <ul>
-  <% @todos.each do |todo| %>
-    <li><%= todo.content %></li>
-    <%= link_to '編集', edit_todo_path(todo) %>
-    <%= link_to '削除', todo_path(todo), method: 'delete' %>
+  <% @categories.each do |category| %>
+    <li><%= category.name %></li>
+    <ul>
+      <% category.todos.each do |todo| %>
+        <li><%= todo.content %></li>
+        <%= link_to '編集', edit_todo_path(todo) %>
+        <%= link_to '削除', todo_path(todo), method: 'delete' %>
+      <% end %>
+    </ul>
   <% end %>
 </ul>
