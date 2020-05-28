@@ -1,6 +1,6 @@
 <h1>カテゴリー管理</h1>
 <h2>カテゴリー作成</h2>
-  <%= form_for @category, url: {controller: 'categories', action: 'create'} do |f| %>
+  <%= form_for @category do |f| %>
     <%= f.text_field :name %>
     <%= f.submit '作成'%>
   <% end %>
@@ -10,7 +10,7 @@
     <li><%= category.name %></li>
     <%= link_to '編集', edit_category_path(category) %>
     <%= link_to '削除', category_path(category), method: 'delete' %>
-  <% end %>　
-</ul>　
+  <% end %>
+</ul>
 
 <%= link_to 'Todo一覧に戻る', todos_path %> 
