@@ -1,24 +1,15 @@
-# README
+# 開発環境
+- ruby 2.6.3
+- rails 6.0.2.2
+- mysql 5.7
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# セットアップ手順
+```shell
+$ git clone https://github.com/gs-create/rails-todo.git
+$ cd rails-todo
+$ bundle install --path vendor/bundle
+$ rails s
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# デモ
+https://rails-todo-dotval.herokuapp.com/
